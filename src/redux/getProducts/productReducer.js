@@ -3,7 +3,7 @@ import { GET_RES_DATA_LOADING, GET_RES_DATA_SUCCESS, GET_RES_DATA_ERR } from "./
 const initialState={
     getResDataLoading:false,
     getResDataErr:false,
-    resData:""
+    resData:[]
 }
 
 export const productsReducer=(store=initialState, {type, payload})=>{

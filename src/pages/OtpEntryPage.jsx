@@ -6,6 +6,8 @@ import { Button, ButtonGroup } from '@chakra-ui/react'
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom"
 import { PinInput, PinInputField } from '@chakra-ui/react'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchUserAuthentication } from '../redux/Authentication/actions'
 
 
 
@@ -14,7 +16,9 @@ import { PinInput, PinInputField } from '@chakra-ui/react'
 
 
 export const OtpEntryPage = () => {
+    const dispatch=useDispatch()
 const navigate=useNavigate();
+const { auth }=useSelector((state)=>state);
 
 const [otp, setOtp]=useState("");
 
@@ -27,7 +31,7 @@ const handleChange=(e)=>{
 
 
 const handleVerify=()=>{
-    
+    dispatch(fetchUserAuthentication(auth.user_mobile, otp, "+91"))
     navigate("/home")
 }
 
