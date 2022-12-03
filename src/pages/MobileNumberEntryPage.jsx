@@ -20,7 +20,7 @@ export const MobileNumberEntryPage = () => {
   }
 
   const handleSendOtp=()=>{
-    dispatch(fetchRegisterUser(phoneNumber,"+91"))
+    // dispatch(fetchRegisterUser(phoneNumber,"+91"))
     navigate("/otpEntry")
 
   }

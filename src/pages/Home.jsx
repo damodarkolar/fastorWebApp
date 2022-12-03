@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { ProductCard } from '../components/ProductCard';
 
-import { products } from '../components/products';
+import { products as resProducts } from '../components/products';
 import { fetchResData } from '../redux/getProducts/actionTypes';
 
 
@@ -17,18 +17,17 @@ export const Home = () => {
   React.useEffect(()=>{
     dispatch(fetchResData())
 },[])
-const { resData, setResData }=useState([]);
 
 const { products }=useSelector((state)=>state);
 
-
+const resdata=resProducts;
 
 
 
   return (
     <>
-        <div>
-        {products.resData?.map((ele)=><ProductCard ele={ele}/>)}
+        <div style={{display:"grid", gridTemplateColumns:"auto auto auto"}}>
+        {resdata?.map((ele)=><ProductCard ele={ele}/>)}
         </div>
     </>
     

@@ -11,7 +11,6 @@ function App() {
 
   return (
     <div className="App">
-      APP
       <Routes>
         <Route path='/home' element={<Home/>}/>
         <Route path='/' element={<MobileNumberEntryPage/>}/>

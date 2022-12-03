@@ -53,7 +53,7 @@ const handleVerify=()=>{
     <PinInputField />
   </PinInput>
 </HStack> */}
-<Input onChange={handleChange} placeholder='Enter Your Phone Number' size='lg' name="phoneNumber" value={otp}/>
+<Input onChange={handleChange} placeholder='Enter verification coder' size='lg' name="phoneNumber" value={otp}/>
   <Button colorScheme='orange' variant='solid' onClick={handleVerify}>
     Verify
   </Button>
